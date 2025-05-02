@@ -15,8 +15,12 @@ class Cell:
 class MineSweeper:
     def __init__(self, rows: int, cols: int, mines: int):
         if mines >= rows * cols:
-            print(f"Mine count {mines} too high for {rows}×{cols} board; setting to {rows*cols-1}.")
+            print(
+                f"Mine count {mines} too high for {rows}×{cols} board; "
+                f"setting to {rows * cols - 1}."
+            )
             mines = rows * cols - 1
+
         self.r, self.c, self.m = rows, cols, mines
         self.board = [[Cell() for _ in range(cols)] for _ in range(rows)]
         self.opened_cnt = 0
@@ -65,7 +69,8 @@ class MineSweeper:
                 placed += 1
 
     def _calc_adj(self):
-        dirs = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
+        dirs = [(-1, -1), (-1, 0), (-1, 1), (0, -1),
+                (0, 1), (1, -1), (1, 0), (1, 1)]
         for i in range(self.r):
             for j in range(self.c):
                 if self.board[i][j].mine:
@@ -139,7 +144,8 @@ class MineSweeper:
 
 def main():
     try:
-        r, c, m = map(int, input("Enter rows cols mines (default 9 9 10): ").split())
+        r, c, m = map(int, input(
+            "Enter rows cols mines (default 9 9 10): ").split())
     except ValueError:
         r, c, m = 9, 9, 10
     game = MineSweeper(r, c, m)
