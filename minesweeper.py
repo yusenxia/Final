@@ -15,10 +15,7 @@ class Cell:
 class MineSweeper:
     def __init__(self, rows: int, cols: int, mines: int):
         if mines >= rows * cols:
-            print(
-                f"Mine count {mines} too high for {rows}×{cols} board; setting to {
-                    rows * cols - 1}."
-            )
+            print(f"Mine count {mines} too high for {rows}×{cols} board; setting to {rows*cols-1}.")
             mines = rows * cols - 1
         self.r, self.c, self.m = rows, cols, mines
         self.board = [[Cell() for _ in range(cols)] for _ in range(rows)]
