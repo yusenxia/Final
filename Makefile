@@ -14,3 +14,9 @@ run:
 
 clean:
 	rm -rf __pycache__/ .pytest_cache/
+
+docker-build:
+	docker build -t minesweeper:latest .
+
+docker-run: docker-build
+	docker run -it minesweeper:latest
