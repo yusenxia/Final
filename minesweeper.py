@@ -135,7 +135,7 @@ class MineSweeper:
             print()
 
     def _print_help(self):
-        print("=== Command-Line Minesweeper ===")
+        print("=== Welcome to Minesweeper ===")
         print("Commands:")
         print("  o row and col -> open a cell")
         print("  f row and col -> tag flag on a cell")
